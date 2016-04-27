@@ -2,6 +2,6 @@
   "name": "yrxwin.github.io",
   "version": "0.0.1",
   "dependencies": {
-    "bootstrap": "^3.3.6"
+    "bootstrap": "3.3.4"
   }
 }

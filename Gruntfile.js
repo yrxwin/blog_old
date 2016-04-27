@@ -35,6 +35,10 @@ module.exports = function (grunt) {
           '!<%= yeoman.app %>/_bower_components/**/*'
         ],
         tasks: ['jekyll:server']
+      },
+      bower: {
+        files: ['bower.json'],
+        tasks: ['wiredep']
       }
     },
     browserSync: {
@@ -150,8 +154,8 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     wiredep: {
       app: {
-        src: ['<%= yeoman.app %>/index.html'],
-        ignorePath: /\.\.\//
+        src: ['<%= yeoman.app %>/_layouts/default.html']
+        // ignorePath: /\.\.\//
       }
     },
 
@@ -348,6 +352,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'wiredep',
       'concurrent:server',
       'autoprefixer:dist',
       'browserSync:server',
@@ -379,6 +384,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean',
     // Jekyll cleans files from the target directory, so must run first
+    'wiredep',
     'jekyll:dist',
     'concurrent:dist',
     'useminPrepare',
