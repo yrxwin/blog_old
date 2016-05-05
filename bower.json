@@ -2,6 +2,7 @@
   "name": "yrxwin.github.io",
   "version": "0.0.1",
   "dependencies": {
-    "bootstrap": "3.3.4"
+    "bootstrap": "3.3.4",
+    "components-font-awesome": "^4.6.1"
   }
 }

@@ -258,9 +258,10 @@ module.exports = function (grunt) {
             'img/**/*',
             'fonts/**/*',
             // Like Jekyll, exclude files & folders prefixed with an underscore.
-            '!**/_*{,/**}'
+            '!**/_*{,/**}',
             // Explicitly add any files your site needs for distribution here.
             //'_bower_components/jquery/jquery.min.js',
+            '_bower_components/components-font-awesome/fonts/*.*'
             //'favicon.ico',
             //'apple-touch*.png'
           ],
@@ -278,6 +279,7 @@ module.exports = function (grunt) {
         }]
       }
     },
+    // Renames files for browser caching purposes
     filerev: {
       options: {
         length: 4
