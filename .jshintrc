@@ -10,9 +10,12 @@
   "latedef": true,
   "newcap": true,
   "noarg": true,
-  "quotmark": "single",
   "undef": true,
   "strict": false,
   "trailing": true,
-  "smarttabs": true
+  "smarttabs": true,
+  "globals": {
+    "$": false,
+    "jQuery": false
+  }
 }

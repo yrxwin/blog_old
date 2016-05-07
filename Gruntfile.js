@@ -92,6 +92,8 @@ module.exports = function (grunt) {
         }
       }
     },
+
+    // Empties folders to start fresh
     clean: {
       dist: {
         files: [{
@@ -139,6 +141,8 @@ module.exports = function (grunt) {
         }]
       }
     },
+
+    // Add vendor prefixed styles
     autoprefixer: {
       options: {
         browsers: ['last 2 versions']
@@ -155,7 +159,15 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/_layouts/default.html'],
-        ignorePath: /\.\.\//
+        ignorePath: /\.\.\//,
+        fileTypes: {
+          html: {
+            replace: {
+              js: '<script src="/{{filePath}}"></script>',
+              css: '<link rel="stylesheet" href="/{{filePath}}" />'
+            }
+          }
+        }
       }
     },
 
@@ -305,6 +317,8 @@ module.exports = function (grunt) {
         }
       }
     },
+
+    // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -313,7 +327,10 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/js/**/*.js',
-        'test/spec/**/*.js'
+        'test/spec/**/*.js',
+        '!<%= yeoman.app %>/js/jqBootstrapValidation.js',
+        '!<%= yeoman.app %>/js/classie.js',
+        '!<%= yeoman.app %>/js/cbpAnimatedHeader.js'
       ]
     },
     csslint: {
@@ -333,6 +350,8 @@ module.exports = function (grunt) {
     //     '<%= yeoman.app %>/_scss/**/*.scss'
     //   ]
     // },
+
+    // Run some tasks in parallel to speed up the dist process
     concurrent: {
       server: [
         'sass:server',
