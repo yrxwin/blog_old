@@ -259,26 +259,38 @@ module.exports = function (grunt) {
     },
     copy: {
       dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>',
-          src: [
-            // Jekyll processes and moves HTML and text files.
-            // Usemin moves CSS and javascript inside of Usemin blocks.
-            // Copy moves asset files and directories.
-            'img/**/*',
-            'fonts/**/*',
-            // Like Jekyll, exclude files & folders prefixed with an underscore.
-            '!**/_*{,/**}',
-            // Explicitly add any files your site needs for distribution here.
-            //'_bower_components/jquery/jquery.min.js',
-            '_bower_components/components-font-awesome/fonts/*.*'
-            //'favicon.ico',
-            //'apple-touch*.png'
-          ],
-          dest: '<%= yeoman.dist %>'
-        }]
+        files: [
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>',
+            src: [
+              // Jekyll processes and moves HTML and text files.
+              // Usemin moves CSS and javascript inside of Usemin blocks.
+              // Copy moves asset files and directories.
+              'img/**/*',
+              'fonts/**/*',
+              // Like Jekyll, exclude files & folders prefixed with an underscore.
+              '!**/_*{,/**}',
+              // Explicitly add any files your site needs for distribution here.
+              //'_bower_components/jquery/jquery.min.js',
+              //'favicon.ico',
+              //'apple-touch*.png'
+            ],
+            dest: '<%= yeoman.dist %>'
+          },
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/_bower_components/bootstrap/dist',
+            src: 'fonts/*.*',
+            dest: '<%= yeoman.dist %>'
+          },
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/_bower_components/components-font-awesome',
+            src: 'fonts/*.*',
+            dest: '<%= yeoman.dist %>'
+          }]
       },
       // Copy CSS into .tmp directory for Autoprefixer processing
       stageCss: {
