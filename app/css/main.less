@@ -182,7 +182,7 @@ header {
 		.intro-heading {
 			.heading-font;
 			font-weight: 700;
-			font-size: 50px;
+			font-size: 40px;
 			line-height: 50px;
 			margin-bottom: 25px;
 		}
@@ -217,7 +217,7 @@ header {
 section {
     padding: 100px 0;
     h2.section-heading {
-		font-size: 40px;
+		font-size: 30px;
 		margin-top: 0;
 		margin-bottom: 15px;
     }
@@ -234,6 +234,9 @@ section {
 @media(min-width:768px) {
 	section {
 		padding: 150px 0;
+    h2.section-heading {
+      font-size: 40px;
+    }
 	}
 }
 
@@ -643,7 +646,7 @@ ul.social-buttons {
 	    text-align: center;
 		h2 {
 	    	margin-bottom: 15px;
-	    	font-size: 3em;
+	    	font-size: 30px;
 		}
 		p {
 			margin-bottom: 30px;
@@ -651,7 +654,7 @@ ul.social-buttons {
 		p.item-intro {
 			margin: 20px 0 30px;
 			.serif-font;
-			font-style: italic;
+			// font-style: italic;
 			font-size: 16px;
 		}
 		ul.list-inline {
@@ -701,6 +704,16 @@ ul.social-buttons {
     	opacity: 0;
     	display: none;
     }
+}
+
+@media(min-width:768px) {
+  .portfolio-modal {
+    .modal-content {
+      h2 {
+        font-size: 32px;
+      }
+    }
+  }
 }
 
 // Highlight Color Customization
