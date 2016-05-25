@@ -1,10 +1,36 @@
 ---
 layout: default
 ---
+<style>
+  .navbar-brand {
+    padding-top: 10px;
+  }
+  .narbar-brand img {
+    border-radius: 7px;
+  }
+  @media (max-width: 768px) {
+    .container {
+      padding: 0;
+    }
+  }
+</style>
+<!-- navigation bar -->
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <a class="navbar-brand" href="{{ 'index.html' | prepend: site.baseurl }}">
+      <img alt="Brand" src="/img/home.jpg">
+    </a>
+      <span class="pull-right">
+        <a href="/blogs.html" style="margin-right: 15px;" type="button" class="btn btn-info navbar-btn text-right">Blogs</a>
+      </span>
+  </div> <!-- /.container-fluid -->
+</nav>
+<!-- end of navigation -->
+
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <h2 class="post-title" itemprop="name headline">{{ page.title }}</h2>
     <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
   </header>
 
