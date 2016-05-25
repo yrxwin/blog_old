@@ -218,10 +218,10 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 header {
-  background-image: url('../img/bg-pku.jpg');
   background-repeat: none;
   background-attachment: scroll;
   background-position: center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/20160523_bdwm.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
