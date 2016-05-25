@@ -11,31 +11,40 @@ layout: default
   @media (max-width: 768px) {
     .container {
       padding: 0;
+      margin-left: 15px;
     }
   }
 </style>
-<!-- navigation bar -->
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <a class="navbar-brand" href="{{ 'index.html' | prepend: site.baseurl }}">
-      <img alt="Brand" src="/img/home.jpg">
-    </a>
+<div class="row">
+  <!-- navigation bar -->
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html">
+        <img alt="Brand" src="/img/home.jpg">
+      </a>
       <span class="pull-right">
         <a href="/blogs.html" style="margin-right: 15px;" type="button" class="btn btn-info navbar-btn text-right">Blogs</a>
       </span>
-  </div> <!-- /.container-fluid -->
-</nav>
-<!-- end of navigation -->
+    </div> <!-- /.container-fluid -->
+  </nav>
+  <!-- end of navigation -->
 
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="container" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div style="text-align: center" class="panel-heading">
+        <h3 itemprop="name headline" style="margin-bottom: 10px;" class="panel-title">
+          {{ page.title }}
+        </h3>
+        <span>
+          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
+        </span>
+      </div>
+      <div class="panel-body" itemprop="articleBody">
+        {{ content }}
+      </div>
 
-  <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">{{ page.title }}</h2>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
+    </div>
   </div>
+</div>
 
-</article>

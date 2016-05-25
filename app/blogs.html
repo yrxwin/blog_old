@@ -11,47 +11,51 @@ layout: default
   @media (max-width: 768px) {
     .container {
       padding: 0;
+      margin-left: 15px;
     }
   }
 </style>
-<!-- navigation bar -->
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <a class="navbar-brand" href="{{ 'index.html' | prepend: site.baseurl }}">
-      <img alt="Brand" src="img/home.jpg">
-    </a>
+<div class="row">
+  <!-- navigation bar -->
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <a class="navbar-brand" href="{{ 'index.html' | prepend: site.baseurl }}">
+        <img alt="Brand" src="img/home.jpg">
+      </a>
       <span class="pull-right">
         <a href="{{ 'blogs.html' | prepend: site.baseurl }}" style="margin-right: 15px;" type="button" class="btn btn-info navbar-btn text-right">Blogs</a>
       </span>
-  </div> <!-- /.container-fluid -->
-</nav>
-<!-- end of navigation -->
+    </div> <!-- /.container-fluid -->
+  </nav>
+  <!-- end of navigation -->
 
-<!-- blog list -->
-<div class="container">
-  <div class="panel panel-primary">
-    <!-- Default panel contents -->
-    <div class="panel-heading">BLOG LIST</div>
-    <div class="panel-body">
-      <p>
-        Welcome to my blog!
-        <br>
-        Currently the web and blog is pretty new, with only a few contents. I will gradually add more contents related to technique, my interest, or just some interesting things I happen to find. Please stay tuned for new content.
-        <br>
-        You could <a href="{{ 'index.html#contact' | prepend: site.baseurl }}">contact me</a> for any interesting stuff. Look forward to hearing from you!
-      </p>
-    </div>
+  <!-- blog list -->
+  <div class="container">
+    <div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div class="panel-heading">BLOG LIST</div>
+      <div class="panel-body">
+        <p>
+          Welcome to my blog!
+          <br>
+          Currently the web and blog is pretty new, with only a few contents. I will gradually add more contents related to technique, my interest, or just some interesting things I happen to find. Please stay tuned for new content.
+          <br>
+          You could <a href="{{ 'index.html#contact' | prepend: site.baseurl }}">contact me</a> for any interesting stuff. Look forward to hearing from you!
+        </p>
+      </div>
 
-    <!-- List group -->
-    <ul class="list-group">
-      {% for post in site.posts %}
+      <!-- List group -->
+      <ul class="list-group">
+        {% for post in site.posts %}
         <a class="list-group-item" href="{{ post.url | prepend: site.baseurl }}">
           <span class="badge progress-bar-success">{{ post.date | date: "%b %-d, %Y" }}</span>
           {{ post.title }}
         </a>
-      {% endfor %}
-    </ul>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
+  <!-- end of blog list -->
 </div>
-<!-- end of blog list -->
+
 
